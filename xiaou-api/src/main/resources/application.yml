@@ -1,4 +1,23 @@
+spring:
+  application:
+    name: xiaou-ai-interview
+  profiles:
+    active: dev
+
 server:
-  port: 8080
-  servlet:
-    context-path: /uapi
+  tomcat:
+    uri-encoding: UTF-8
+    max-swallow-size: -1 #不限制请求大小
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: assign_id
+      #      banner: false
+      update-strategy: not_empty
+  mapper-locations: classpath*:com/xiaou/mapper/*.xml
+pagehelper:
+  helper-dialect: MYSQL
+  support-methods-arguments: true #支持通过 Mapper 接口参数来传递分页参数
