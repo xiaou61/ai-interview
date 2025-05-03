@@ -4,6 +4,7 @@ import com.xiaou.common.utils.R;
 import com.xiaou.req.InterviewerReq;
 import com.xiaou.service.InterviewService;
 import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +25,7 @@ public class InterviewerController {
      * @return
      */
     @PostMapping("/createOrUpdate")
-    private R createOrUpdate(@RequestBody InterviewerReq req) {
+    private R createOrUpdate(@Valid @RequestBody InterviewerReq req) {
         interviewService.createOrUpdate(req);
         return R.ok("操作成功");
     }
