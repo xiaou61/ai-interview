@@ -7,11 +7,23 @@
     <groupId>com.xiaou</groupId>
     <artifactId>ai-interview-dev</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>xiaou-common</module>
+        <module>xiaou-pojo</module>
+        <module>xiaou-dao</module>
+        <module>xiaou-service</module>
+        <module>xiaou-api</module>
+    </modules>
 
     <properties>
-        <maven.compiler.source>23</maven.compiler.source>
-        <maven.compiler.target>23</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencyManagement>
+        <dependencies></dependencies>
+    </dependencyManagement>
 
 </project>
