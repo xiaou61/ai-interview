@@ -9,4 +9,5 @@ public class IndexController {
     public String index() {
         return "欢迎来到AI-Interview";
     }
+
 }
