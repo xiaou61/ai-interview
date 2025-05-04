@@ -1,5 +1,7 @@
 package com.xiaou.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xiaou.mapper.InterviewerMapper;
 import com.xiaou.pojo.Interviewer;
 import com.xiaou.req.InterviewerReq;
@@ -10,6 +12,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class InterviewServiceImpl implements InterviewService {
@@ -28,5 +31,10 @@ public class InterviewServiceImpl implements InterviewService {
         } else {
             interviewerMapper.updateById(interviewer);
         }
+    }
+
+    @Override
+    public List<Interviewer> queryAll() {
+        return interviewerMapper.selectList(new QueryWrapper<Interviewer>().orderByDesc("updated_time"));
     }
 }

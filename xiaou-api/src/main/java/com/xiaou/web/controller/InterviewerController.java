@@ -5,10 +5,7 @@ import com.xiaou.req.InterviewerReq;
 import com.xiaou.service.InterviewService;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/interviewer")
@@ -28,5 +25,10 @@ public class InterviewerController {
     private R createOrUpdate(@Valid @RequestBody InterviewerReq req) {
         interviewService.createOrUpdate(req);
         return R.ok("操作成功");
+    }
+
+    @GetMapping("list")
+    public R list() {
+        return R.ok(interviewService.queryAll());
     }
 }
