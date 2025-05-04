@@ -9,11 +9,9 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("*")
+                .allowedOrigins("http://localhost:63343") // 指定前端地址
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
-                .allowCredentials(true)
-                .maxAge(3600);
-        WebMvcConfigurer.super.addCorsMappings(registry);
+                .allowCredentials(true); // 允许携带凭证
     }
 }
