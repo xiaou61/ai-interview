@@ -31,4 +31,10 @@ public class InterviewerController {
     public R list() {
         return R.ok(interviewService.queryAll());
     }
+
+    @DeleteMapping("/delete")
+    public R delete(@RequestParam String id) {
+        interviewService.delete(id);
+        return R.ok("删除成功");
+    }
 }

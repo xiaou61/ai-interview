@@ -37,4 +37,9 @@ public class InterviewServiceImpl implements InterviewService {
     public List<Interviewer> queryAll() {
         return interviewerMapper.selectList(new QueryWrapper<Interviewer>().orderByDesc("updated_time"));
     }
+
+    @Override
+    public void delete(String id) {
+        interviewerMapper.deleteById(id);
+    }
 }

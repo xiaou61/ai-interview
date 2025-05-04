@@ -9,4 +9,6 @@ public interface InterviewService {
     void createOrUpdate(InterviewerReq req);
 
     List<Interviewer> queryAll();
+
+    void delete(String id);
 }
